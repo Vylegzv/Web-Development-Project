@@ -62,7 +62,8 @@
       <br />
       </h2>
 		
-		<br><br><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p><br>
+		<br><br><p>Welcome to our site, Small Pets World! Here you will find important information relating to basic homecare and vetcare for your pet, as well as examples of common illnesses that your pet may contract and some basic information about planning to adopt. </p>
+    <br><p>We currently have information for <a href = "chinchilla.php">chinchillas</a>, <a href = "ferret.php">ferrets</a>, <a href = "guineapig.php">guinea pigs</a>, <a href = "hamster.php">hamsters</a>, and <a href = "rabbit.php">rabbits</a>. Please feel free to contact us with any questions you may have concerning the care of your pet! </p><br>
 		
 		 <ul class="gallery">
 			<a href = "guineapig.php">
