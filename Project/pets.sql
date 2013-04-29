@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2013 at 05:11 AM
+-- Generation Time: Apr 30, 2013 at 12:42 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -19,6 +19,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `pets`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `poll`
+--
+
+CREATE TABLE IF NOT EXISTS `poll` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `vote` varchar(20) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `poll`
+--
+
+INSERT INTO `poll` (`ID`, `vote`) VALUES
+(1, 'Guinea Pig'),
+(2, 'Hamster'),
+(3, 'Chinchilla'),
+(4, 'Ferret'),
+(5, 'Rabbit'),
+(6, 'Rabbit'),
+(7, 'Rabbit'),
+(8, 'Guinea Pig'),
+(9, 'Hamster');
 
 -- --------------------------------------------------------
 
@@ -63,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `usercontent` (
   `Answer` varchar(2000) DEFAULT NULL,
   `Answered` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `usercontent`
