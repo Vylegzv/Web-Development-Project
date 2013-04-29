@@ -105,15 +105,21 @@ if($action == 'ajax'){
 	  <div id="navigationh">
 	    <ul>
         <li><a href="index.php">Home</a></li>
-        <li><a href="guineapig.php">Guinea Pigs</a></li>
-		<li><a href="hamster.php">Hamsters</a></li>
-		<li><a href="chinchilla.php">Chinchillas</a></li>
-		<li><a href="ferret.php">Ferrets</a></li>
-        <li><a href="rabbit.php">Rabbits</a></li>
-		<li><a href="gallery.php">Gallery</a></li>
-		<li><a href="questions.php">Questions?</a></li>
+        <li><a href="gallery.php">Gallery</a></li>
+        <li><a href="poll.php">Poll</a></li>
+        <li><a href="questions.php">Questions?</a></li>
 	    </ul>
-    </div>		
+    </div>	
+
+    <div id="navigationv">
+	    <ul>
+        <li><a href="guineapig.php">Guinea Pigs</a></li>
+        <li><a href="hamster.php">Hamsters</a></li>
+        <li><a href="chinchilla.php">Chinchillas</a></li>
+        <li><a href="ferret.php">Ferrets</a></li>
+        <li><a href="rabbit.php">Rabbits</a></li>
+	    </ul>
+    </div>	
 
 
     <div id="content"> 
@@ -151,7 +157,7 @@ if($action == 'ajax'){
 	    <div id="pushdown"></div>
 	    </div>
 	    <div id="footer">
-		    <a href="#">About</a> - <a href="#">Contact Us</a> - <a href="#">Terms of Use</a>
+		    <a href="#">About</a> - <a href="questions.php">Contact Us</a> - <a href="#">Terms of Use</a>
 		  </div>	
 	  </body>
 	</html>

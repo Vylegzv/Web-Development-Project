@@ -43,16 +43,21 @@
 	  <div id="navigationh">
 	    <ul>
         <li><a href="index.php">Home</a></li>
-        <li><a href="guineapig.php">Guinea Pigs</a></li>
-		<li><a href="hamster.php">Hamsters</a></li>
-		<li><a href="chinchilla.php">Chinchillas</a></li>
-		<li><a href="ferret.php">Ferrets</a></li>
-        <li><a href="rabbit.php">Rabbits</a></li>
-		<li><a href="gallery.php">Gallery</a></li>
-		<li><a href="questions.php">Questions?</a></li>
+        <li><a href="gallery.php">Gallery</a></li>
+        <li><a href="poll.php">Poll</a></li>
+        <li><a href="questions.php">Questions?</a></li>
 	    </ul>
     </div>	
 
+    <div id="navigationv">
+	    <ul>
+        <li><a href="guineapig.php">Guinea Pigs</a></li>
+        <li><a href="hamster.php">Hamsters</a></li>
+        <li><a href="chinchilla.php">Chinchillas</a></li>
+        <li><a href="ferret.php">Ferrets</a></li>
+        <li><a href="rabbit.php">Rabbits</a></li>
+	    </ul>
+    </div>
 
     <div id="content"> 
       <h2 id="pagetitle">Welcome!
@@ -63,7 +68,7 @@
       </h2>
 		
 		<br><br><p>Welcome to our site, Small Pets World! Here you will find important information relating to basic homecare and vetcare for your pet, as well as examples of common illnesses that your pet may contract and some basic information about planning to adopt. </p>
-    <br><p>We currently have information for <a href = "chinchilla.php">chinchillas</a>, <a href = "ferret.php">ferrets</a>, <a href = "guineapig.php">guinea pigs</a>, <a href = "hamster.php">hamsters</a>, and <a href = "rabbit.php">rabbits</a>. Please feel free to contact us with any questions you may have concerning the care of your pet! </p><br>
+    <br><p>We currently have information for <a href = "guineapig.php">guinea pigs</a>, <a href = "hamster.php">hamsters</a>, <a href = "chinchilla.php">chinchillas</a>, <a href = "ferret.php">ferrets</a>, and <a href = "rabbit.php">rabbits</a>. Please feel free to contact us with any questions you may have concerning the care of your pet! </p><br>
 		
 		 <ul class="gallery">
 			<a href = "guineapig.php">
@@ -97,7 +102,7 @@
     <div id="pushdown"></div>
     </div>
     <div id="footer">
-	    <a href="#">About</a> - <a href="#">Contact Us</a> - <a href="#">Terms of Use</a>
+	    <a href="#">About</a> - <a href="questions.php">Contact Us</a> - <a href="#">Terms of Use</a>
 	  </div>	
   </body>
 </html>

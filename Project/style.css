@@ -44,6 +44,7 @@ p {
 	text-indent:0em;
 }
 
+
 .subtitle {
 	color:#D2E9FF;
 	text-shadow: black 0.1em 0.1em 0.2em;
@@ -218,7 +219,7 @@ ul.accordion li .bgDescription{
 	color:navy;
 	text-shadow: white 0.1em 0.1em 0.1em;
 	font-size:1.3em;
-	text-align:center;
+  text-align: center;
 }
 
 #navigationh {
@@ -238,18 +239,18 @@ ul.accordion li .bgDescription{
 #navigationv {
   float:left;
   background-color:#A7D4FF;
-  width:190px;
+  width:150px;
 }
 #navigationv li {
   list-style-type:none;
 }
 #navigationv li:hover{
-	background:url(rose_icon.png) no-repeat right;
+	background:url(images/icon.gif) no-repeat right;
 }
 
 
 #content {
-  margin-left:0px;
+  margin-left:155px;
 }
 
 #flowerimage{
@@ -269,8 +270,8 @@ ul.accordion li .bgDescription{
 }
 
 img.selectpet {
-	width: 9.2em;
-	height: 9em;
+	width: 7.3em;
+	height: 7em;
 }
 
 img.petimage{
@@ -326,9 +327,24 @@ border-radius:3px;
 }
 
 .gallery1 {
-	margin-left:35px; 
-	width:1000px; 
-	height:500px;
+	margin-left:155px; 
+	width:500px; 
+	height:400px;
 }
 
 
+.bar { 
+  margin-left: 2em;
+  width: 200px;
+  height: 1.2em;
+  border: 1px solid #000; 
+}
+
+.percentage { 
+  background: #3333CC; 
+  opacity:0.5;
+  filter:alpha(opacity=50);
+  width: 200px;
+  height: 1.2em;
+  color: black;
+}
