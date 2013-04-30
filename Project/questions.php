@@ -1,47 +1,3 @@
-<?php 
-$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
-if($action == 'ajax'){
-	/* Connect To Database*/
-	$link = mysql_connect("localhost","root","") or die("Couldn't make connection.");
-	$db = mysql_select_db("Pets", $link) or die("Couldn't select database");
-	
-  /*
-	include 'pagination.php'; //include pagination file
-	
-	//pagination variables
-	$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
-	$per_page = 2; //how much records you want to show
-	$adjacents  = 2; //gap between pages after number of adjacents
-	$offset = ($page - 1) * $per_page;
-  
-	*/
-	//Count the total number of row in the table*/
-  /*
-	$count_query   = mysql_query("SELECT COUNT(*) AS numrows FROM smallpets WHERE type = 'Rabbit'");
-	$row     = mysql_fetch_array($count_query);
-	$numrows = $row['numrows'];
-	$total_pages = ceil($numrows/$per_page);
-	$reload = 'rabbit.php';
-	*/
-  
-  //main query to fetch the data
-    $query = mysql_query("SELECT * FROM usercontent ORDER BY ID DESC");
-
-    //loop through fetched data
-  while($row = mysql_fetch_array($query)){
-    if ($row['Answered'] == 1){ // Only post questions that have been answered
-      echo '         <br><h3 class = "space subtitle">' . $row['Subject'] . '</h3>' . PHP_EOL;
-      echo '         <h2 class = "space subtitle2">' . $row['Name'] . '</h2>' . PHP_EOL;
-      echo '         <br><p class="noindent">' . $row['Question'] . '</p>' . PHP_EOL;
-      echo '         <br><p class="noindent">' . $row['Answer'] . '</p>' . PHP_EOL;
-    }
-  }
-//echo '<br>' . paginate($reload, $page, $total_pages, $adjacents);
-  } else{
-//echo '<br>' . paginate($reload, $page, $total_pages, $adjacents);
-?>
-
-
 <!DOCTYPE html> 
 <html>
   <head>
@@ -59,21 +15,6 @@ if($action == 'ajax'){
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>    
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>  
 	<script type="text/javascript">	
-	
-	$(document).ready(function(){
-		load(1);
-	});
-
-	function load(page){
-		$("#loader").fadeIn('slow');
-		$.ajax({
-			url:'questions.php?action=ajax&page='+page,
-			success:function(data){
-				$(".outer_div").html(data).fadeIn('slow');
-				$("#loader").fadeOut('slow');
-			}
-		})
-	}
 	
 	!function(d,s,id){
 		var js,fjs=d.getElementsByTagName(s)[0];
@@ -119,6 +60,26 @@ if($action == 'ajax'){
         <li><a href="ferret.php">Ferrets</a></li>
         <li><a href="rabbit.php">Rabbits</a></li>
 	    </ul>
+	</br>
+	<?php
+	// count how many banners we have
+	$query = mysql_query("select * from Banners");
+	$total = mysql_num_rows($query);
+
+	// lets create a random number
+	$random = (rand()%$total);
+
+	// retrieve the record number corresponding to the generated random number
+	$query = mysql_query("SELECT * FROM Banners LIMIT $random, 1");
+
+	while ($row=mysql_fetch_object($query))
+	    {
+	    echo"<a href='$row->ban_url' target='_blank' title='$row->ban_text'><img class = 'banner' src='$row->ban_image' alt='$row->ban_text'></a>";
+	    $ban_view = $row->ban_views + 1;
+	    // update the 'times viewed' counter on the banner
+	    mysql_query("update Banners set ban_views = $ban_view where ban_id = $row->ban_id");
+	    }
+	?>
     </div>	
 
 
@@ -131,7 +92,7 @@ if($action == 'ajax'){
       </h2>
 
       <br><br><p>Have questions about your pet? Want more information about adopting? Send us your questions below! We'll post our favorite questions with answers at the bottom of this page. Thanks! </p>
-      
+
       <br>
       <form action="insertusercontent.php" method="post">
         <br><p class="noindent">
@@ -148,11 +109,21 @@ if($action == 'ajax'){
         </p>
         <input type="submit" name="submit" value="Submit" />
       </form>
+
+	<?php
+	  $query = mysql_query("SELECT * FROM usercontent ORDER BY ID DESC");
+
+	  //loop through fetched data
+	while($row = mysql_fetch_array($query)){
+	  if ($row['Answered'] == 1){ // Only post questions that have been answered
+	    echo '         <br><h3 class = "space subtitle">' . $row['Subject'] . '</h3>' . PHP_EOL;
+	    echo '         <h2 class = "space subtitle2">' . $row['Name'] . '</h2>' . PHP_EOL;
+	    echo '         <br><p class="noindent">' . $row['Question'] . '</p>' . PHP_EOL;
+	    echo '         <br><p class="noindent">' . $row['Answer'] . '</p>' . PHP_EOL;
+	  }
+	}
+	?>
     </div>
-  
-		<div id="loader"><img src="loader.gif"></div>		
-		<div class="outer_div"></div>
-    <br><br>
     
 	    <div id="pushdown"></div>
 	    </div>
@@ -161,4 +132,3 @@ if($action == 'ajax'){
 		  </div>	
 	  </body>
 	</html>
-	<?php }?>

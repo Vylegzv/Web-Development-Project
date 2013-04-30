@@ -2,6 +2,10 @@
 
 <html>
 <head>
+	<?php
+	$db = mysql_connect("localhost", "root");
+	mysql_select_db("Pets", $db);
+	?>
     <title>Small Pets World: Gallery</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="keywords"  content="small pets, gallery, pictures" />
@@ -68,6 +72,26 @@
         <li><a href="ferret.php">Ferrets</a></li>
         <li><a href="rabbit.php">Rabbits</a></li>
 	    </ul>
+	</br>
+	<?php
+	// count how many banners we have
+	$query = mysql_query("select * from Banners");
+	$total = mysql_num_rows($query);
+
+	// lets create a random number
+	$random = (rand()%$total);
+
+	// retrieve the record number corresponding to the generated random number
+	$query = mysql_query("SELECT * FROM Banners LIMIT $random, 1");
+
+	while ($row=mysql_fetch_object($query))
+	    {
+	    echo"<a href='$row->ban_url' target='_blank' title='$row->ban_text'><img class = 'banner' src='$row->ban_image' alt='$row->ban_text'></a>";
+	    $ban_view = $row->ban_views + 1;
+	    // update the 'times viewed' counter on the banner
+	    mysql_query("update Banners set ban_views = $ban_view where ban_id = $row->ban_id");
+	    }
+	?>
     </div>
 
 
@@ -80,16 +104,16 @@
       </h2>
     <br />
     <div class="gallery1">
-        <img src="images/SlidingGallery/img1.jpg" caption="A papercraft AT-AT that I made" />
-        <img src="images/SlidingGallery/img2.jpg" caption="My dog when she was a wee puppy" />
-        <img src="images/SlidingGallery/img3.jpg" caption="A bit of Photoshop fun" />
-        <img src="images/SlidingGallery/img4.jpg" class="start" caption="A woodburning of mine, inspired by Dark Tower series by Stephen King" layout="portrait" />
-        <img src="images/SlidingGallery/img5.jpg" caption="Another woodburning of mine, inspired by Dark Tower series by Stephen King" layout="portrait" />
-        <img src="images/SlidingGallery/img6.jpg" caption="Some lights in the lobby of the Rio in Vegas" layout="landscape" />
-        <img src="images/SlidingGallery/img7.jpg" caption="A baby lion at the MGM Grand" />
-        <img src="images/SlidingGallery/img8.jpg" caption="Me dressed up as the Punisher for halloween + a bit of photoshop" layout="portrait" />
-        <img src="images/SlidingGallery/img9.jpg" caption="A cake I made for my friend Matt" layout="portrait" />
-        <img src="images/SlidingGallery/img10.jpg" caption="A stained glass roof in Caesar's Palace" />
+        <img src="images/SlidingGallery/img1.jpg" alt="Under Construction" />
+        <img src="images/SlidingGallery/img2.jpg" alt="Under Construction" />
+        <img src="images/SlidingGallery/img3.jpg" alt="Under Construction" />
+        <img src="images/SlidingGallery/img4.jpg" class="start" alt="Under Construction" layout="portrait" />
+        <img src="images/SlidingGallery/img5.jpg" alt="Under Construction" layout="portrait"/>
+        <img src="images/SlidingGallery/img6.jpg" alt="Under Construction" layout="landscape" />
+        <img src="images/SlidingGallery/img7.jpg" alt="Under Construction" />
+        <img src="images/SlidingGallery/img8.jpg" alt="Under Construction" layout="portrait" />
+        <img src="images/SlidingGallery/img9.jpg" alt="Under Construction" layout="portrait" />
+        <img src="images/SlidingGallery/img10.jpg" alt="Under Construction" />
     </div>
     </div>  
 

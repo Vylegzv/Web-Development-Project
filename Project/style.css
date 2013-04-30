@@ -3,7 +3,7 @@
   padding:0;
 }
 body{
-  width:1000px;
+  width:1100px;
   margin:auto;
   font-family:Arial, helvetica, Verdana, Sans-Serif;
   font-size:20px;
@@ -53,133 +53,8 @@ p {
 }
 
 .subtitle2 {
-	color:indianred;
+	color:#E34363;
 	font-size:0.7em;
-}
-
-.more{
-    cursor:pointer;
-    font-weight:bold;
-    color:orangered;
-    text-align:center;
-}
-.nomore{
-    font-weight:bold;
-    color:orangered;
-    text-align:center;
-}
-
-.accordion1 h3{
-	background:springgreen;
-	color: crimson;
-	font-style:italic;
-}
-
-
-ul.accordion li.bleft{
-    border-left:2px solid #fff;
-}
-ul.accordion{
-    list-style:none;
-    position:absolute;
-    font-family: Cambria, serif;
-    font-size: 16px;
-    font-style: italic;
-    line-height: 1.5em;
-}
-ul.accordion li{
-    float:right;
-    width:115px;
-    height:330px;
-    display:block;
-    border-right:2px solid #fff;
-    border-bottom:2px solid #fff;
-    background-color:#fff;
-    background-repeat:no-repeat;
-    background-position:center center;
-    position:relative;
-    overflow:hidden;
-    cursor:pointer;
-    -moz-box-shadow:1px 3px 15px #555;
-    -webkit-box-shadow:1px 3px 15px #555;
-    box-shadow:1px 3px 15px #555;
-}
-ul.accordion li.bg1{
-    background-image:url(http://cache0.bigcartel.com/product_images/91393670/01.jpg);
-}
-ul.accordion li.bg2{
-    background-image:url(http://rosenotes.typepad.com/.a/6a010535bf3807970c017d3d6c3266970c-500wi);
-}
-ul.accordion li.bg3{
-    background-image:url(http://images.fanpop.com/images/image_uploads/Portland-Rose-Garden-portland-692412_1920_1440.jpg);
-}
-
-ul.accordion li .heading{
-    background-color:#fff;
-    padding:10px;
-    margin-top:60px;
-    opacity:0.9;
-    text-transform:uppercase;
-    font-style:normal;
-    font-weight:bold;
-    letter-spacing:1px;
-    font-size:14px;
-    color:#444;
-    text-align:center;
-    text-shadow:-1px -1px 1px #ccc;
-}
-ul.accordion li .description{
-    position:absolute;
-    width:480px;
-    height:175px;
-    bottom:0px;
-    left:0px;
-    display:none;
-}
-ul.accordion li .description h2{
-    text-transform:uppercase;
-    font-style:normal;
-    font-weight:bold;
-    letter-spacing:1px;
-    font-size:45px;
-    color:#444;
-    text-align:left;
-    margin:0px 0px 15px 20px;
-    text-shadow:-1px -1px 1px #ccc;
-}
-ul.accordion li .description p{
-    line-height:14px;
-    margin:10px 22px;
-    font-family: "Trebuchet MS", sans-serif;
-    font-size: 12px;
-    font-style: italic;
-    font-weight: normal;
-    text-transform: none;
-    letter-spacing: normal;
-    line-height: 1.6em;
-}
-ul.accordion li .description a{
-    position:absolute;
-    bottom:5px;
-    left:20px;
-    text-transform:uppercase;
-    font-style:normal;
-    font-size:11px;
-    text-decoration:none;
-    color:#888;
-}
-ul.accordion li .description a:hover{
-    color:#333;
-    text-decoration:underline;
-}
-ul.accordion li .bgDescription{
-    background:transparent url(http://www.artedigitalia.es/images/bgDescription.png) repeat-x top left;
-    height:340px;
-    position:absolute;
-    bottom:0px;
-    left:0px;
-    width:100%;
-    display:none;
 }
 
 
@@ -215,11 +90,10 @@ ul.accordion li .bgDescription{
 }
 
 #pagetitle {
-	/*color:#82D682;*/
 	color:navy;
 	text-shadow: white 0.1em 0.1em 0.1em;
 	font-size:1.3em;
-  text-align: center;
+    text-align: center;
 }
 
 #navigationh {
@@ -253,12 +127,6 @@ ul.accordion li .bgDescription{
   margin-left:155px;
 }
 
-#flowerimage{
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
-}
-
 #pushdown {
   clear:both;
   height:30px;
@@ -270,8 +138,8 @@ ul.accordion li .bgDescription{
 }
 
 img.selectpet {
-	width: 7.3em;
-	height: 7em;
+	width: 8.3em;
+	height: 8em;
 }
 
 img.petimage{
@@ -282,54 +150,18 @@ img.petimage{
 	height: 11em;
 }
 
-
-
-
-.pagin {
-padding: 10px 0;
-font:bold 11px/30px arial, serif;
-}
-
-.pagin * {
-padding: 2px 6px;
-color:#009BCF;
-margin: 2px;
-border-radius:3px;
-}
-
-.pagin a {
-		border:solid 1px #009BCF;
-		text-decoration:none;
-		background:#F8FCFF;
-		padding:6px 7px 5px;
-}
-
-.pagin span, a:hover, .pagin a:active,.pagin span.current {
-		color:#B0868C;
-		background:-moz-linear-gradient(top,#B4F6FF 1px,#63D0FE 1px,#58B0E7);
-		    
-}
-
-.pagin span,.current{
-	padding:8px 7px 7px;
-}
-
-.outer_div1{
-	margin-left:195px;
-}
-
-#loader{
-	position: absolute;
-	text-align: center;
-	top: 100px;
-	width: 100%;
-	display:none;
+img.banner {
+	width:7em;
+	height:5em;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 .gallery1 {
-	margin-left:155px; 
-	width:500px; 
-	height:400px;
+	margin-left:0px; 
+	width:1000px; 
+	height:390px;
 }
 
 
@@ -347,4 +179,10 @@ border-radius:3px;
   width: 200px;
   height: 1.2em;
   color: black;
+}
+
+#counter {
+	font-size:0.7em;
+	font-style:italic;
+	color:lightslategray;
 }

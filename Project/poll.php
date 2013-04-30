@@ -16,21 +16,6 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>  
 	<script type="text/javascript">	
 	
-	$(document).ready(function(){
-		load(1);
-	});
-
-	function load(page){
-		$("#loader").fadeIn('slow');
-		$.ajax({
-			url:'questions.php?action=ajax&page='+page,
-			success:function(data){
-				$(".outer_div").html(data).fadeIn('slow');
-				$("#loader").fadeOut('slow');
-			}
-		})
-	}
-	
 	!function(d,s,id){
 		var js,fjs=d.getElementsByTagName(s)[0];
 		if(!d.getElementById(id)){js=d.createElement(s);
@@ -75,6 +60,26 @@
         <li><a href="ferret.php">Ferrets</a></li>
         <li><a href="rabbit.php">Rabbits</a></li>
 	    </ul>
+	</br>
+	<?php
+	// count how many banners we have
+	$query = mysql_query("select * from Banners");
+	$total = mysql_num_rows($query);
+
+	// lets create a random number
+	$random = (rand()%$total);
+
+	// retrieve the record number corresponding to the generated random number
+	$query = mysql_query("SELECT * FROM Banners LIMIT $random, 1");
+
+	while ($row=mysql_fetch_object($query))
+	    {
+	    echo"<a href='$row->ban_url' target='_blank' title='$row->ban_text'><img class = 'banner' src='$row->ban_image' alt='$row->ban_text'></a>";
+	    $ban_view = $row->ban_views + 1;
+	    // update the 'times viewed' counter on the banner
+	    mysql_query("update Banners set ban_views = $ban_view where ban_id = $row->ban_id");
+	    }
+	?>
     </div>	
 
 
